@@ -1,13 +1,26 @@
 plugins {
     id 'java'
     id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.10'
 }
 
 group 'group.id'
 version 'version.number'
+application.mainClassName = 'path.to.main.class'
 
 repositories {
     mavenCentral()
+    google()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+}
+
+
+javafx {
+    version = '11'
+    modules = ['javafx.controls', 'javafx.fxml']
+
 }
 
 dependencies {
