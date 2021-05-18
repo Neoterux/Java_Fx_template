@@ -1,0 +1,82 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.neoterux</groupId>
+    <packaging>jar</packaging>
+    <artifactId>CHANGE_THIS</artifactId>
+    <version>VERSION_THIS</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- Set Java Bytecode Version -->
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+
+    <!-- Libraries -->
+    <dependencies>
+        <!-- OpenJFX dependencies  -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>11.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>11.0.2</version>
+        </dependency>
+
+        <!-- Other dependencies -->
+
+    </dependencies>
+
+    <build>
+        <!-- Insert Project name -->
+        <finalName>PROJECT_NAME</finalName>
+
+        <plugins>
+            <!-- Maven Compiler plugin-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <release>11</release>
+                </configuration>
+            </plugin>
+
+            <!-- JavaFX Maven Plugin -->
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.5</version>
+                <configuration>
+                    <!-- Set main class full path -->
+                    <mainClass>PATH.TO.MAIN.CLASS</mainClass>
+                </configuration>
+            </plugin>
+
+            <!-- Maven module jar plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>libs/</classpathPrefix>
+                            <!-- Set launcher class -->
+                            <mainClass>
+                                PATH.TO.LAUNCH.CLASS
+                            </mainClass>
+                        </manifest>
+                        <!--manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile-->
+                    </archive>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>
